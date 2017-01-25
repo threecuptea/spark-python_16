@@ -1,0 +1,222 @@
++---------------------------------+
+|features                         |
++---------------------------------+
+|[[0,mouse], [1,black]]           |
+|[[0,cat], [1,tabby], [2,mouse]]  |
+|[[0,bear], [1,black], [2,salmon]]|
++---------------------------------+
+
+(1c) OHE features in SparseVector
+[2 3] [ 1.  1.]
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+
+(1d) Define OHE functions
+(7,[2,3],[1.0,1.0]) (7,[1,4,5],[1.0,1.0,1.0]) (7,[0,3,6],[1.0,1.0,1.0])
+1 test passed.
+1 test passed.
+1 test passed.
++----------------------------+
+|PythonUDF#<lambda>(features)|
++----------------------------+
+|(7,[2,3],[1.0,1.0])         |
+|(7,[1,4,5],[1.0,1.0,1.0])   |
+|(7,[0,3,6],[1.0,1.0,1.0])   |
++----------------------------+
+
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+
+(2a) DataFrame with row of (featureID, category)
++----------+
+|col       |
++----------+
+|[0,bear]  |
+|[0,mouse] |
+|[1,black] |
+|[1,tabby] |
+|[2,salmon]|
+|[2,mouse] |
+|[0,cat]   |
++----------+
+
+1 test passed.
+
+(2b) OHE dictionary from distinct features
+1 test passed.
+1 test passed.
+
+(2c) Automated creation of OHE dictionary
+1 test passed.
+1 test passed.
+
+(3a) Loading and splitting the data
+
+(3b) extract feature
+[(0, u'1'), (1, u'1'), (2, u'5'), (3, u'0'), (4, u'1382'), (5, u'4'), (6, u'15'), (7, u'2'), (8, u'181'), (9, u'1'), (10, u'2'), (11, u''), (12, u'2'), (13, u'68fd1e64'), (14, u'80e26c9b'), (15, u'fb936136'), (16, u'7b4723c4'), (17, u'25c83c98'), (18, u'7e0ccccf'), (19, u'de7995b8'), (20, u'1f89b562'), (21, u'a73ee510'), (22, u'a8cd5504'), (23, u'b2cb9c98'), (24, u'37c9c164'), (25, u'2824a5f6'), (26, u'1adce6ef'), (27, u'8ba8b39a'), (28, u'891b62e7'), (29, u'e5ba7672'), (30, u'f54016b9'), (31, u'21ddcdc9'), (32, u'b1252a9d'), (33, u'07b5194c'), (34, u''), (35, u'3a171ecb'), (36, u'c5c50484'), (37, u'e8b83407'), (38, u'9727dd16')]
+1 test passed.
+1 test passed.
+
+(3c) Extracting features continued
+80178 9887 9935 100000
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+
+total # categories= 233941
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+
+(3d) Create OHE dictionary from dataset
+233941
+194837
+1 test passed.
+1 test passed.
+
+(3e) Apply OHE to the dataset
+80178
+[Row(label=0.0, features=SparseVector(233941, {0: 1.0, 1: 1.0, 39036: 1.0, 39037: 1.0, 39038: 1.0, 39039: 1.0, 39040: 1.0, 39041: 1.0, 39042: 1.0, 39043: 1.0, 39044: 1.0, 39045: 1.0, 39046: 1.0, 39047: 1.0, 77792: 1.0, 77793: 1.0, 77794: 1.0, 77795: 1.0, 77796: 1.0, 77797: 1.0, 77798: 1.0, 116844: 1.0, 116845: 1.0, 116846: 1.0, 116847: 1.0, 155823: 1.0, 155824: 1.0, 155825: 1.0, 155826: 1.0, 155827: 1.0, 155828: 1.0, 155829: 1.0, 155830: 1.0, 194837: 1.0, 194838: 1.0, 194839: 1.0, 194840: 1.0, 194841: 1.0, 194842: 1.0}))]
+1 test passed.
+1 test passed.
+39
+1 test passed.
+1 test passed.
+1 test passed.
+9887
+[Row(label=0.0, features=SparseVector(233941, {0: 1.0, 1: 1.0, 11: 1.0, 39036: 1.0, 39037: 1.0, 39038: 1.0, 39039: 1.0, 39040: 1.0, 39041: 1.0, 39045: 1.0, 39046: 1.0, 39066: 1.0, 77792: 1.0, 77793: 1.0, 77794: 1.0, 77795: 1.0, 77796: 1.0, 77797: 1.0, 77798: 1.0, 98673: 1.0, 116844: 1.0, 116845: 1.0, 116846: 1.0, 116847: 1.0, 116849: 1.0, 116855: 1.0, 116856: 1.0, 155823: 1.0, 155824: 1.0, 155825: 1.0, 155826: 1.0, 155828: 1.0, 155830: 1.0, 155840: 1.0, 194837: 1.0, 194838: 1.0, 194839: 1.0, 194842: 1.0, 194846: 1.0}))]
+
+(4a) Logistic regression
+intercept: -1.23057928975
+The length of coefficients: 233941
+1 test passed.
+
+(4b) Log loss
++----+-----+
+|p   |label|
++----+-----+
+|0.5 |1    |
+|0.5 |0    |
+|0.99|1    |
+|0.99|0    |
+|0.01|1    |
+|0.01|0    |
+|1.0 |1    |
+|0.0 |1    |
+|1.0 |0    |
++----+-----+
+
++----+-----+-------------------+
+|p   |label|log_loss           |
++----+-----+-------------------+
+|0.5 |1    |0.6931471805599453 |
+|0.5 |0    |0.6931471805599453 |
+|0.99|1    |0.01005033585350145|
+|0.99|0    |4.605170185988091  |
+|0.01|1    |4.605170185988091  |
+|0.01|0    |0.01005033585350145|
+|1.0 |1    |-0.0               |
+|0.0 |1    |36.841361487904734 |
+|1.0 |0    |36.841361487904734 |
++----+-----+-------------------+
+
+1 test passed.
+1 test passed.
+
+(4c) Baseline log loss
+Training class one fraction = 0.226
+Baseline Train Logloss = 0.535
+1 test passed.
+1 test passed.
+
+(4d) Predicted Probability
++-----+--------------------+-------------------+
+|label|            features|                  p|
++-----+--------------------+-------------------+
+|  0.0|(233941,[0,1,3903...| 0.1524569011902128|
+|  0.0|(233941,[2,3,4,39...|0.15116321092690524|
+|  0.0|(233941,[5,6,3903...|0.16569053420524252|
+|  0.0|(233941,[7,8,9,39...|0.12978985339524934|
+|  0.0|(233941,[6,39036,...|0.19090817079835234|
++-----+--------------------+-------------------+
+only showing top 5 rows
+
+1 test passed.
+
+(4e) Evaluate the model
+OHE Features Train Logloss:
+	Baseline = 0.535
+	LogReg = 0.475
+1 test passed.
+1 test passed.
+
+(4f) Validation log loss
+OHE Features Validation Logloss:
+	Baseline = 0.544
+	LogReg = 0.488
+1 test passed.
+1 test passed.
+
+(5a) Hash function
+{'mouse:0': 3, 'black:1': 3}
+{'mouse:2': 1, 'tabby:1': 0, 'cat:0': 1}
+{'bear:0': 2, 'black:1': 3, 'salmon:2': 0}
+{'mouse:0': 99, 'black:1': 51}
+{'mouse:2': 9, 'tabby:1': 72, 'cat:0': 21}
+{'bear:0': 82, 'black:1': 51, 'salmon:2': 80}
+
+		 4 Buckets 			 100 Buckets
+SampleOne:	 {3: 2.0}			 {99: 1.0, 51: 1.0}
+SampleTwo:	 {0: 1.0, 1: 2.0}			 {72: 1.0, 9: 1.0, 21: 1.0}
+SampleThree:	 {0: 1.0, 2: 1.0, 3: 1.0}			 {80: 1.0, 82: 1.0, 51: 1.0}
+1 test passed.
+1 test passed.
+
+(5b) Creating hash features
++-----+--------------------+
+|label|            features|
++-----+--------------------+
+|  0.0|(32768,[1613,1659...|
+|  0.0|(32768,[274,590,1...|
+|  0.0|(32768,[1408,1613...|
+|  0.0|(32768,[1613,2034...|
+|  0.0|(32768,[1408,1572...|
++-----+--------------------+
+only showing top 5 rows
+
+1 test passed.
+1 test passed.
+
+(5c) Sparsity
+Sparsity = 0.40.
+1 test passed.
+
+(5d) Sparsity continued
+Average OHE Sparsity: 1.667087e-04
+Average HASH Sparsity: 1.189663e-03
+1 test passed.
+
+(5e) Logistic model with hashed features
+intercept: -1.24017184805
+32768
+OHE Features Train Logloss:
+	Baseline = 0.535
+	LogReg = 0.475
+	Hashed = 0.465
+1 test passed.
+
+(5f) Evaluate on the test set
+Hashed Features Test Log Loss:
+	Baseline = 0.530
+	LogReg = 0.459
+1 test passed.
+1 test passed.

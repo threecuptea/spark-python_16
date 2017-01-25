@@ -1,0 +1,158 @@
+(1a) intepreting PCA
+[ 49.95739037  49.97180477]
+[array([ 49.6717712 ,  50.07531969])]
+[array([-0.28561917,  0.10351492])]
+1 test passed.
+1 test passed.
+
+(1b) Sample covariance matrix
+[[ 0.99558386  0.90148989]
+ [ 0.90148989  1.08607497]]
+1 test passed.
+
+(1c) Covariance function
+[[ 0.99558386  0.90148989]
+ [ 0.90148989  1.08607497]]
+1 test passed.
+
+(1d) Eigendecomposition
+eigenvalues: [ 0.13820481  1.94345403]
+
+eigenvectors: 
+[[-0.72461254  0.68915649]
+ [ 0.68915649  0.72461254]]
+1 test passed.
+one-dimensional data (first three):
+[70.516828061106551, 69.306223556234471, 71.135881678263345]
+1 test passed.
+
+(2a) PCA function
+
+The PCA for 'Correlated_data, k = 2'-
+original eigh_vals: 
+[ 0.13820481  1.94345403]
+original eigh_vecs: 
+[[-0.72461254  0.68915649]
+ [ 0.68915649  0.72461254]]
+
+top_components_correlated: 
+[[ 0.68915649 -0.72461254]
+ [ 0.72461254  0.68915649]]
+
+correlated_data_scores_auto (first three): 
+[ 70.51682806  -1.48305648]
+[ 69.30622356  -1.5888655 ]
+[ 71.13588168  -1.86710679]
+
+eigenvalues_correlated: 
+[ 1.94345403  0.13820481]
+
+The PCA for 'PCA test data, k = 2'-
+original eigh_vals: 
+[ -3.16741334e-14  -1.09584308e-14  -3.94430453e-31   1.28000000e+02]
+original eigh_vecs: 
+[[ -7.95140162e-01  -3.43150291e-01  -7.41676339e-18   5.00000000e-01]
+ [  5.88571918e-01  -6.35281904e-01  -2.66963658e-16   5.00000000e-01]
+ [  1.03284122e-01   4.89216098e-01  -7.07106781e-01   5.00000000e-01]
+ [  1.03284122e-01   4.89216098e-01   7.07106781e-01   5.00000000e-01]]
+
+
+pca_test_data: 
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]
+ [16 17 18 19]]
+
+components_test: 
+[[  5.00000000e-01  -7.41676339e-18  -3.43150291e-01]
+ [  5.00000000e-01  -2.66963658e-16  -6.35281904e-01]
+ [  5.00000000e-01  -7.07106781e-01   4.89216098e-01]
+ [  5.00000000e-01   7.07106781e-01   4.89216098e-01]]
+
+test_scores (first three): 
+[ 3.          0.70710678  1.81079858]
+[ 11.           0.70710678   1.81079858]
+[ 19.           0.70710678   1.81079858]
+
+eigenvalues_test: 
+[  1.28000000e+02  -3.94430453e-31  -1.09584308e-14  -3.16741334e-14]
+1 test passed.
+1 test passed.
+1 test passed.
+
+The PCA for 'Correlated_data, k = 1'-
+original eigh_vals: 
+[ 0.13820481  1.94345403]
+original eigh_vecs: 
+[[-0.72461254  0.68915649]
+ [ 0.68915649  0.72461254]]
+
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+
+(2a) PCA on data random
+
+The PCA for 'Random_data, k = 2'-
+original eigh_vals: 
+[ 0.99521397  1.4204546 ]
+original eigh_vecs: 
+[[-0.96766056 -0.2522559 ]
+ [-0.2522559   0.96766056]]
+
+top_components_random: 
+[[-0.2522559  -0.96766056]
+ [ 0.96766056 -0.2522559 ]]
+
+random_data_scores_auto (first three): 
+[ 36.61068572 -61.3489929 ]
+[ 35.97314295 -62.08813671]
+[ 35.59836628 -60.61390415]
+
+eigenvalues_random: 
+[ 1.4204546   0.99521397]
+1 test passed.
+1 test passed.
+1 test passed.
+
+(2c) 3D to 2D
+
+The PCA for '3D correlated data, k = 2'-
+original eigh_vals: 
+[   2.77263528  349.39315648  606.15052924]
+original eigh_vecs: 
+[[ 0.97363318  0.06863768  0.21754839]
+ [-0.191631    0.7634667   0.61676264]
+ [-0.1237578  -0.64218959  0.75648962]]
+
+components_threeD: 
+[[ 0.21754839  0.06863768]
+ [ 0.61676264  0.7634667 ]
+ [ 0.75648962 -0.64218959]]
+
+threeD_scores (first three): 
+[ 84.52282868  -7.11694442]
+[ 88.80251045  16.94396043]
+[ 75.30407414 -19.34840271]
+
+eigenvalues_threeD: 
+[ 606.15052924  349.39315648    2.77263528]
+1 test passed.
+
+(2d) Variance explained
+Percentage of variance explained by the first component of random_data_rdd: 58.8%
+Percentage of variance explained by both components of random_data_rdd: 100.0%
+
+Percentage of variance explained by the first component of correlated_data: 93.4%
+Percentage of variance explained by both components of correlated_data: 100.0%
+
+Percentage of variance explained by the first two components of threeD_data: 99.7%
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
+1 test passed.
