@@ -1,5 +1,5 @@
-# spark-python_16 collect all python files I works on using apache spark python 1.6.  The majority is my re-work of labs from edx.org BerkeleyX course "CS120x: Distrubuted Machine Learning with Apache Spark".
-The topics include:
+### spark-python_16 collect all python files I works on using apache spark python 1.6.  The majority is my re-work of labs from edx.org BerkeleyX course "CS120x: Distrubuted Machine Learning with Apache Spark".
+#### The topics include:
     1. Train a linear regression model to predict the release year of a song given a set of audio features.
        a) Performs a grid search to find the best model by evaluating their RMSE.  
        b) Enhance by adding two-way interaction betwen features. 
