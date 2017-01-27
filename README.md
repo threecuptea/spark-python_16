@@ -1,11 +1,11 @@
 ### spark-python_16 collects all python files I work on using apache spark python 1.6.  The majority is my re-work of labs from edx.org BerkeleyX course "CS120x: Distrubuted Machine Learning with Apache Spark".
 #### The topics include:
-    1. Train a linear regression model to predict the release year of a song given a set of audio features.
+    1. Train a Spark-ML linear regression model to predict the release year of a song given a set of audio features.
        a) Performs a grid search to find the best model by evaluating their RMSEs.
        b) Enhance by adding two-way interaction betwen features. 
        c) Automate the process using Pipeline with PolynomialExpansion as the first stage. 
  
-    2. Train a logistic regression model for creating click-through rate (CTR) pipeline.
+    2. Train a Sprak-ML logistic regression model for creating click-through rate (CTR) pipeline.
        a) Featurize categorical data using OHE (one hot encoding)
        b) Enhance by reducing feature dimension via feature hashing
        c) Logistic regression models the probability of a click-through event
