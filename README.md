@@ -9,8 +9,9 @@
        a) Featurize categorical data using OHE (one hot encoding)
        b) Enhance by reducing feature dimension via feature hashing
        c) Logistic regression models the probability of a click-through event
-       d) Evaluate model performance using log loss which is calculated using actual label and the prediction probability
-    
+       d) Evaluate model performance using log loss which is calculated using actual label and the prediction
+       probability
+
     I use Spark python 1.6 DataFrame for the above 2 labs.
 
     3. Principal component analysis (PCA) using Eigendecomposition
